@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+base {
+    width: 408px;
+    height: 573px;
+    margin: 20px 436px 0 430px;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 17px 50px -10px rgba(1, 33, 78, 0.19);
+    border: solid 1px #f1f5fa;
+    background-color: #ffffff;
+  }
+  
+html, body { height: 100%; }
+body { margin: 2em; font-family: 'Open Sans', sans-serif !important; background: antiquewhite;}
+
+
+.carousel-indicators li{
+  bottom: 30px;
+}

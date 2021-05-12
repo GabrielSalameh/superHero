@@ -1,0 +1,57 @@
+<div class="md-form">
+    <input mdbInput type="text" id="name" class="form-control" [(ngModel)]="name" placeholder="ex: Batman" required>
+</div>
+<a href="#" (click)="getHeros(name)" mdbBtn color="primary" class="waves-light" mdbWavesEffect>Search Hero(s)</a>
+
+
+<div class="d-flex justify-content-center">
+    <div style.height="auto" style="width:43em">
+
+        <mdb-carousel [animation]="'slide'">
+            <mdb-carousel-item *ngFor="let slide of slides; let i = index">
+                <mat-card class="card">
+
+                    <div class="arrow-right"
+                        [ngClass]="{'greens': slide.biography.alignment === 'good', 'reds' : slide.biography.alignment === 'bad' }">
+                    </div>
+                    <div class="alignment">ALIGNMENT: <br> {{slide.biography.alignment | titlecase }}</div>
+                    <img mat-card-image [src]="slide.image.url" class="hero-image" alt="Photo of a Shiba Inu">
+                    <mat-card-content class="content">
+                        <div>
+                            <h1>{{slide.name}}</h1>
+                            <div>FULL NAME: {{slide.biography["full-name"] === 'null' ? '--' :
+                                slide.biography["full-name"]
+                                }}</div>
+                            <div>PLACE OF BIRTH: {{slide.biography["place-of-birth"] === 'null' ? '--' :
+                                slide.biography["place-of-birth"]}}</div>
+                            <div style="padding-bottom: 1em">PUBLISHER: {{slide.biography.publisher === 'null' ? '--' :
+                                slide.biography.publisher}}</div>
+
+                            <div>INTELLIGENCE: {{slide.powerstats.intelligence}} <span
+                                    style="float: right; padding-right:1em">STRENGTH: {{slide.powerstats.strength ===
+                                    'null'
+                                    ? '--' : slide.powerstats.strength}} </span>
+                            </div>
+                            <div>SPEED: {{slide.powerstats.speed === 'null' ? '--' : slide.powerstats.speed }} <span
+                                    style="float: right; padding-right:1em">DURABILITY:
+                                    {{slide.powerstats.durability === 'null' ? '--' : slide.powerstats.durability}}
+                                </span>
+                            </div>
+                            <div>POWER: {{slide.powerstats.power === 'null' ? '--' : slide.powerstats.power}} <span
+                                    style="float: right; padding-right:1em">COMBAT:
+                                    {{slide.powerstats.combat === 'null' ? '--' : slide.powerstats.combat}} </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+
+                </mat-card>
+
+            </mdb-carousel-item>
+
+        </mdb-carousel>
+
+
+    </div>
+</div>
